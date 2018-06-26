@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39AD3BF720DBB5E80006A21B /* SaleMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD3BF620DBB5E80006A21B /* SaleMove.swift */; };
+		39DC4D3720E2E16F00AC7C2E /* SaleMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DC4D3620E2E16F00AC7C2E /* SaleMove.m */; };
 		49BBFF39C744ECBAB07C879C /* Pods_SaleMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6DBD88BCD2B3016B6351ED /* Pods_SaleMove.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,8 @@
 
 /* Begin PBXFileReference section */
 		39AD3BF320DBB5E80006A21B /* libSaleMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaleMove.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		39AD3BF620DBB5E80006A21B /* SaleMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleMove.swift; sourceTree = "<group>"; };
+		39DC4D3520E2E16F00AC7C2E /* SaleMove.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleMove.h; sourceTree = "<group>"; };
+		39DC4D3620E2E16F00AC7C2E /* SaleMove.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleMove.m; sourceTree = "<group>"; };
 		99D2FF6BB9B7E65EACFC4435 /* Pods-SaleMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaleMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaleMove/Pods-SaleMove.release.xcconfig"; sourceTree = "<group>"; };
 		BD6DBD88BCD2B3016B6351ED /* Pods_SaleMove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaleMove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2328C267B13822BD03C32F8 /* Pods-SaleMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaleMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaleMove/Pods-SaleMove.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,7 +65,8 @@
 		39AD3BF520DBB5E80006A21B /* SaleMove */ = {
 			isa = PBXGroup;
 			children = (
-				39AD3BF620DBB5E80006A21B /* SaleMove.swift */,
+				39DC4D3520E2E16F00AC7C2E /* SaleMove.h */,
+				39DC4D3620E2E16F00AC7C2E /* SaleMove.m */,
 			);
 			path = SaleMove;
 			sourceTree = "<group>";
@@ -165,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39AD3BF720DBB5E80006A21B /* SaleMove.swift in Sources */,
+				39DC4D3720E2E16F00AC7C2E /* SaleMove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -277,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -292,6 +294,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XR3G5NDPNH;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -306,6 +309,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XR3G5NDPNH;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
