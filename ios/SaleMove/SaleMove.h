@@ -12,6 +12,6 @@ typedef void (^MessageCompletionBlock)(Message * message);
 @property (nonatomic, copy) MessageCompletionBlock operatorMessageEvent;
 @end
 
-@interface SaleMove : RCTEventEmitter <RCTBridgeModule>
+@interface SaleMove : NSObject <RCTBridgeModule>
 
 @end
