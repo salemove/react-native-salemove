@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "10.0"
 
   s.source       = { :git => 'https://github.com/salemove/react-native-salemove.git', :tag => "v#{s.version}" }
-  s.source_files  = "ios/**/*.{h,m}"
+  s.source_files  = "ios/**/*.{h,m,swift}"
   s.swift_version = '3.3'
   s.ios.deployment_target = '10.0'
 
