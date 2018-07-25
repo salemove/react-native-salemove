@@ -38,34 +38,3 @@ RCT_EXPORT_MODULE(InteractableEmmiter);
 }
 
 @end
-
-@implementation InteractableClient
-- (void)failWith:(SalemoveError *)error {
-    
-}
-
-- (void)end {
-    [InteractableEmmiter emitEventWithName:@"engagement_end" andPayload:nil];
-}
-
-- (void)start {
-    [InteractableEmmiter emitEventWithName:@"engagement_start" andPayload:nil];
-}
-
-- (void)receiveWithMessage:(Message * _Nonnull)message {
-    NSDictionary *payload = @{
-                              @"id": message.id,
-                              @"content": message.content,
-                              @"sender": @"operator"
-                              };
-    [InteractableEmmiter emitEventWithName:@"operator_message" andPayload:payload];
-}
-
-- (void)handleOperatorsWithOperators:(NSArray<Operator *> * _Nonnull)operators {}
-
-@synthesize onMessagesUpdated;
-@synthesize onAudioStreamAdded;
-@synthesize onMediaUpgradeOffer;
-@synthesize onVideoStreamAdded;
-
-@end

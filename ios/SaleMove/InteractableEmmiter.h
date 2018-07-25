@@ -5,6 +5,3 @@
 
 @interface InteractableEmmiter: RCTEventEmitter <RCTBridgeModule>
 @end
-
-@interface InteractableClient : NSObject <Interactable>
-@end
