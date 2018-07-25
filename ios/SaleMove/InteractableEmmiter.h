@@ -4,4 +4,5 @@
 #import <SalemoveSDK/SalemoveSDK-Swift.h>
 
 @interface InteractableEmmiter: RCTEventEmitter <RCTBridgeModule>
++ (void)emitEventWithName:(NSString *)name andPayload:(NSDictionary *)payload;
 @end
