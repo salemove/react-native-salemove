@@ -1,4 +1,4 @@
-#import "InteractableClient.h"
+#import "InteractableEmmiter.h"
 
 @implementation InteractableEmmiter
 

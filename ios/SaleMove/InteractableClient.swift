@@ -1,39 +1,43 @@
 import Foundation
 import SalemoveSDK
 
-class InteractableClient: Interactable {
-    var onMediaUpgradeOffer: MediaUgradeOfferBlock {
+@objc public class InteractableClient: NSObject {
+    
+}
+
+extension InteractableClient: Interactable {
+    public var onMediaUpgradeOffer: MediaUgradeOfferBlock {
         return { _, answer in
             answer(true)
         }
     }
     
-    var onAudioStreamAdded: AudioStreamAddedBlock {
+    public var onAudioStreamAdded: AudioStreamAddedBlock {
         return { [unowned self] stream in
             // TODO: Handle the stream
         }
     }
     
-    var onVideoStreamAdded: VideoStreamAddedBlock {
+    public var onVideoStreamAdded: VideoStreamAddedBlock {
         return { [unowned self] stream in
             // TODO: Handle the stream
         }
     }
     
-    var onMessagesUpdated: MessagesUpdateBlock {
+    public var onMessagesUpdated: MessagesUpdateBlock {
         return { [unowned self] messages in
             // TODO: Handle the messages
         }
     }
     
-    func start() {
+    public func start() {
         InteractableEmmiter.emitEvent(withName: "engagement_start", andPayload: nil)
     }
-    func end() {
+    public func end() {
         InteractableEmmiter.emitEvent(withName: "engagement_end", andPayload: nil)
     }
     
-    func receive(message: Message) {
+    public func receive(message: Message) {
         let payload: [AnyHashable: Any] = [
             "id": message.id,
             "content": message.content,
@@ -43,6 +47,6 @@ class InteractableClient: Interactable {
         InteractableEmmiter.emitEvent(withName: "engagement_started", andPayload: payload)
     }
     
-    func handleOperators(operators: [Operator]) {}
-    func fail(with error: SalemoveError) {}
+    public func handleOperators(operators: [Operator]) {}
+    public func fail(with error: SalemoveError) {}
 }
