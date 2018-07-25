@@ -3,6 +3,8 @@
 #import <React/RCTEventEmitter.h>
 #import <SalemoveSDK/SalemoveSDK-Swift.h>
 
-@interface SaleMove : NSObject <RCTBridgeModule>
+@interface InteractableEmmiter: RCTEventEmitter <RCTBridgeModule>
+@end
 
+@interface InteractableClient : NSObject <Interactable>
 @end

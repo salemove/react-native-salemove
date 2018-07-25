@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A2F879210879750031F208 /* InteractableClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2F878210879750031F208 /* InteractableClient.m */; };
 		39DC4D3720E2E16F00AC7C2E /* SaleMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DC4D3620E2E16F00AC7C2E /* SaleMove.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		39A2F877210879750031F208 /* InteractableClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InteractableClient.h; sourceTree = "<group>"; };
+		39A2F878210879750031F208 /* InteractableClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractableClient.m; sourceTree = "<group>"; };
 		39AD3BF320DBB5E80006A21B /* libSaleMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaleMove.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DC4D3520E2E16F00AC7C2E /* SaleMove.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleMove.h; sourceTree = "<group>"; };
 		39DC4D3620E2E16F00AC7C2E /* SaleMove.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleMove.m; sourceTree = "<group>"; };
@@ -58,6 +61,8 @@
 		39AD3BF520DBB5E80006A21B /* SaleMove */ = {
 			isa = PBXGroup;
 			children = (
+				39A2F877210879750031F208 /* InteractableClient.h */,
+				39A2F878210879750031F208 /* InteractableClient.m */,
 				39DC4D3520E2E16F00AC7C2E /* SaleMove.h */,
 				39DC4D3620E2E16F00AC7C2E /* SaleMove.m */,
 			);
@@ -121,6 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A2F879210879750031F208 /* InteractableClient.m in Sources */,
 				39DC4D3720E2E16F00AC7C2E /* SaleMove.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
