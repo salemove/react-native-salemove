@@ -6,66 +6,26 @@
 //  Copyright © 2018 Facebook. All rights reserved.
 //
 
-#import "SaleMove.h"
+#import <Foundation/Foundation.h>
+#import <React/RCTBridgeModule.h>
+#import <SalemoveSDK/SalemoveSDK-Swift.h>
 
-@implementation SaleMove
+@interface RCT_EXTERN_MODULE(SaleMove, NSObject)
 
-RCT_EXPORT_MODULE(SaleMove);
+RCT_EXTERN_METHOD(sendMessage:(NSString *)messageText callback:(RCTResponseSenderBlock)callback)
 
-RCT_EXPORT_METHOD(sendMessage:(NSString *)messageText callback:(RCTResponseSenderBlock)callback) {
-    [Salemove.sharedInstance sendWithMessage:messageText completion:^(Message * _Nullable message, SalemoveError * _Nullable error) {
-        id messageError = (error != nil) ? error : [NSNull null];
-        id sentMessage = message ? @{
-                                     @"id": message.id,
-                                     @"content": message.content,
-                                     @"sender": @"visitor"
-                                     } : [NSNull null];
-        
-        callback(@[messageError, sentMessage]);
-    }];
-}
+RCT_EXTERN_METHOD(listQueues:(RCTResponseSenderBlock)callback)
 
-RCT_EXPORT_METHOD(listQueues:(RCTResponseSenderBlock)callback) {
-    [Salemove.sharedInstance listQueuesWithCompletion:^(NSArray<Queue *> * _Nullable queues, SalemoveError * _Nullable error) {
-        
-        id incomingError = (error != nil) ? error : [NSNull null];
-        
-        id serializedQueues = [NSMutableArray array];
-        for (Queue *queue in queues) {
-            id serializedQueue = @{@"id": queue.id, @"name": queue.name};
-            [serializedQueues addObject:serializedQueue];
-        }
-        
-        callback(@[incomingError, serializedQueues]);
-    }];
-}
+RCT_EXTERN_METHOD(requestEngagement:(NSString *)queueID withResolve:(RCTPromiseResolveBlock)resolve
+                  withReject:(RCTPromiseRejectBlock)reject)
 
-RCT_REMAP_METHOD(requestEngagement,
-                 queueID:(NSString *)queueID
-                 withResolve:(RCTPromiseResolveBlock)resolve
-                 withReject:(RCTPromiseRejectBlock)reject
-                 ) {
-    
-    [Salemove.sharedInstance queueForEngagementWithQueueID:queueID completion:^(QueueTicket * _Nullable queueTicket, SalemoveError * _Nullable error) {
-        if (error) {
-            reject(@"", error.reason, error.error);
-        } else {
-            resolve(@"");
-        }
-    }];
-}
+RCT_EXTERN_METHOD(endEngagement:(RCTPromiseResolveBlock)resolve
+                  withReject:(RCTPromiseRejectBlock)reject)
 
-RCT_REMAP_METHOD(endEngagement,
-                 withResolve:(RCTPromiseResolveBlock)resolve
-                 withReject:(RCTPromiseRejectBlock)reject
-                 ) {
-    
-    [Salemove.sharedInstance endEngagementWithCompletion:^(BOOL done, SalemoveError * _Nullable error) {
-        if (error) {
-            reject(@"", error.reason, error.error);
-        } else {
-            resolve(@"");
-        }
-    }];
-}
+RCT_EXTERN_METHOD(requestTwoWayAudio:(RCTPromiseResolveBlock)resolve
+                  withReject:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(requestTwoWayVideo:(RCTPromiseResolveBlock)resolve
+                  withReject:(RCTPromiseRejectBlock)reject)
+
 @end

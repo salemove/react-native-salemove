@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		399322482114557900484728 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399322452114557900484728 /* MediaViewController.swift */; };
+		399322492114557900484728 /* StoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399322462114557900484728 /* StoryboardExtensions.swift */; };
+		3993224A2114557900484728 /* SaleMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399322472114557900484728 /* SaleMove.swift */; };
 		39A2F879210879750031F208 /* InteractableEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2F878210879750031F208 /* InteractableEmitter.m */; };
 		39A2F87C210894710031F208 /* InteractableClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2F87B210894710031F208 /* InteractableClient.swift */; };
 		39DC4D3720E2E16F00AC7C2E /* SaleMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DC4D3620E2E16F00AC7C2E /* SaleMove.m */; };
@@ -25,12 +28,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		399322442114557800484728 /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
+		399322452114557900484728 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		399322462114557900484728 /* StoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExtensions.swift; sourceTree = "<group>"; };
+		399322472114557900484728 /* SaleMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleMove.swift; sourceTree = "<group>"; };
 		39A2F877210879750031F208 /* InteractableEmmiter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InteractableEmmiter.h; sourceTree = "<group>"; };
 		39A2F878210879750031F208 /* InteractableEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractableEmitter.m; sourceTree = "<group>"; };
 		39A2F87A210894710031F208 /* SaleMove-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaleMove-Bridging-Header.h"; sourceTree = "<group>"; };
 		39A2F87B210894710031F208 /* InteractableClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractableClient.swift; sourceTree = "<group>"; };
 		39AD3BF320DBB5E80006A21B /* libSaleMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaleMove.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		39DC4D3520E2E16F00AC7C2E /* SaleMove.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaleMove.h; sourceTree = "<group>"; };
 		39DC4D3620E2E16F00AC7C2E /* SaleMove.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleMove.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,9 +70,12 @@
 		39AD3BF520DBB5E80006A21B /* SaleMove */ = {
 			isa = PBXGroup;
 			children = (
+				399322442114557800484728 /* Media.storyboard */,
+				399322452114557900484728 /* MediaViewController.swift */,
+				399322472114557900484728 /* SaleMove.swift */,
+				399322462114557900484728 /* StoryboardExtensions.swift */,
 				39A2F877210879750031F208 /* InteractableEmmiter.h */,
 				39A2F878210879750031F208 /* InteractableEmitter.m */,
-				39DC4D3520E2E16F00AC7C2E /* SaleMove.h */,
 				39DC4D3620E2E16F00AC7C2E /* SaleMove.m */,
 				39A2F87B210894710031F208 /* InteractableClient.swift */,
 				39A2F87A210894710031F208 /* SaleMove-Bridging-Header.h */,
@@ -133,8 +142,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A2F87C210894710031F208 /* InteractableClient.swift in Sources */,
+				3993224A2114557900484728 /* SaleMove.swift in Sources */,
 				39A2F879210879750031F208 /* InteractableEmitter.m in Sources */,
 				39DC4D3720E2E16F00AC7C2E /* SaleMove.m in Sources */,
+				399322482114557900484728 /* MediaViewController.swift in Sources */,
+				399322492114557900484728 /* StoryboardExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

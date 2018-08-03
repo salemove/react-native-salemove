@@ -2,10 +2,10 @@ import Foundation
 import SalemoveSDK
 
 @objc public class InteractableClient: NSObject {
-    
+    public weak var rootController: UIViewController?
 }
 
-extension InteractableClient: Interactable {
+extension InteractableClient: Interactable {    
     public var onMediaUpgradeOffer: MediaUgradeOfferBlock {
         return { _, answer in
             answer(true)
@@ -14,13 +14,29 @@ extension InteractableClient: Interactable {
     
     public var onAudioStreamAdded: AudioStreamAddedBlock {
         return { [unowned self] stream in
-            // TODO: Handle the stream
+            if let presented = self.rootController?.presentedViewController as? MediaViewController {
+                presented.handleAudioStream(stream: stream)
+                
+            } else {
+                let controller = MediaViewController.initStoryboardInstance()
+                self.rootController?.present(controller, animated: true, completion: {
+                    controller.handleAudioStream(stream: stream)
+                })
+            }
         }
     }
     
     public var onVideoStreamAdded: VideoStreamAddedBlock {
         return { [unowned self] stream in
-            // TODO: Handle the stream
+            if let presented = self.rootController?.presentedViewController as? MediaViewController {
+                presented.handleVideoStream(stream: stream)
+                
+            } else {
+                let controller = MediaViewController.initStoryboardInstance()
+                self.rootController?.present(controller, animated: true, completion: {
+                    controller.handleVideoStream(stream: stream)
+                })
+            }
         }
     }
     
@@ -44,7 +60,7 @@ extension InteractableClient: Interactable {
             "sender": "operator"
         ]
         
-        InteractableEmmiter.emitEvent(withName: "engagement_started", andPayload: payload)
+        InteractableEmmiter.emitEvent(withName: "operator_message", andPayload: payload)
     }
     
     public func handleOperators(operators: [Operator]) {}

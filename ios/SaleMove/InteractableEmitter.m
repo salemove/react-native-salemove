@@ -9,6 +9,8 @@ RCT_EXPORT_MODULE(InteractableEmmiter);
              @"operator_message",
              @"engagement_start",
              @"engagement_end",
+             @"audio_stream_add",
+             @"video_stream_add"
              ];
 }
 

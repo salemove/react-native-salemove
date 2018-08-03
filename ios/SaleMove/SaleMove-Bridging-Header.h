@@ -4,3 +4,4 @@
 
 #import <React/RCTBridgeModule.h>
 #import "InteractableEmmiter.h"
+#import <PodAsset/PodAsset.h>

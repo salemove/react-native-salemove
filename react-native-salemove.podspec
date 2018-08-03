@@ -14,9 +14,13 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => 'https://github.com/salemove/react-native-salemove.git', :tag => "v#{s.version}" }
   s.source_files  = "ios/**/*.{h,m,swift}"
+  s.resource_bundles = {
+    'react-native-salemove' => ['ios/**/*.{storyboard,xib}']
+  } 
   s.swift_version = '3.3'
   s.ios.deployment_target = '10.0'
 
   s.dependency 'React'
   s.dependency 'SalemoveSDK'
+  s.dependency 'PodAsset'
 end
