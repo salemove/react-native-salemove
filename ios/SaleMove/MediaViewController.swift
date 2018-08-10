@@ -1,4 +1,3 @@
-
 private extension Selector {
     static let handleRemoteTap = #selector(MediaViewController.handleRemoteTap)
     static let handleLocalTap = #selector(MediaViewController.handleLocalTap)
@@ -21,8 +20,11 @@ class MediaViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     @IBAction func end(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        Salemove.sharedInstance.endEngagement { success, error in
+           self.dismiss(animated: true, completion: nil)
+        }
     }
     
     func updateStreams(streams: [String]?) {

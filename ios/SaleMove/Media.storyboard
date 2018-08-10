@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,8 +42,8 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9z-U0-aqp">
-                                <rect key="frame" x="167.5" y="627" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
+                                <rect key="frame" x="172" y="627" width="30" height="30"/>
+                                <state key="normal" title="End"/>
                                 <connections>
                                     <action selector="end:" destination="mPU-Cx-jMj" eventType="touchUpInside" id="ftb-vX-4iL"/>
                                 </connections>
