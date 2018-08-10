@@ -13,6 +13,7 @@
 		39A2F879210879750031F208 /* InteractableEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A2F878210879750031F208 /* InteractableEmitter.m */; };
 		39A2F87C210894710031F208 /* InteractableClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2F87B210894710031F208 /* InteractableClient.swift */; };
 		39DC4D3720E2E16F00AC7C2E /* SaleMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DC4D3620E2E16F00AC7C2E /* SaleMove.m */; };
+		E98930654DF25ABCA2E614A6 /* Pods_SaleMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CF139222BD2A5DC2FF841E /* Pods_SaleMove.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E5A710ADDB9323EED5202D8 /* Pods-SaleMove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaleMove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaleMove/Pods-SaleMove.debug.xcconfig"; sourceTree = "<group>"; };
 		399322442114557800484728 /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
 		399322452114557900484728 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		399322462114557900484728 /* StoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExtensions.swift; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		39A2F87B210894710031F208 /* InteractableClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractableClient.swift; sourceTree = "<group>"; };
 		39AD3BF320DBB5E80006A21B /* libSaleMove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaleMove.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DC4D3620E2E16F00AC7C2E /* SaleMove.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaleMove.m; sourceTree = "<group>"; };
+		E72E4F492EE95A325DBD58FC /* Pods-SaleMove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaleMove.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaleMove/Pods-SaleMove.release.xcconfig"; sourceTree = "<group>"; };
+		F3CF139222BD2A5DC2FF841E /* Pods_SaleMove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaleMove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98930654DF25ABCA2E614A6 /* Pods_SaleMove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				39AD3BF520DBB5E80006A21B /* SaleMove */,
 				39AD3BF420DBB5E80006A21B /* Products */,
+				F1899FDDC38D1A52D5486683 /* Pods */,
+				E82B8D3305F77CFE8AE7A5FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +90,23 @@
 			path = SaleMove;
 			sourceTree = "<group>";
 		};
+		E82B8D3305F77CFE8AE7A5FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3CF139222BD2A5DC2FF841E /* Pods_SaleMove.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1899FDDC38D1A52D5486683 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E5A710ADDB9323EED5202D8 /* Pods-SaleMove.debug.xcconfig */,
+				E72E4F492EE95A325DBD58FC /* Pods-SaleMove.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,6 +114,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39AD3BFA20DBB5E80006A21B /* Build configuration list for PBXNativeTarget "SaleMove" */;
 			buildPhases = (
+				7813C5CB63C41F56096A08AD /* [CP] Check Pods Manifest.lock */,
 				39AD3BEF20DBB5E80006A21B /* Sources */,
 				39AD3BF020DBB5E80006A21B /* Frameworks */,
 				39AD3BF120DBB5E80006A21B /* CopyFiles */,
@@ -135,6 +160,27 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7813C5CB63C41F56096A08AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SaleMove-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39AD3BEF20DBB5E80006A21B /* Sources */ = {
@@ -269,6 +315,7 @@
 		};
 		39AD3BFB20DBB5E80006A21B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E5A710ADDB9323EED5202D8 /* Pods-SaleMove.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,6 +339,7 @@
 		};
 		39AD3BFC20DBB5E80006A21B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E72E4F492EE95A325DBD58FC /* Pods-SaleMove.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

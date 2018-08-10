@@ -1,0 +1,28 @@
+
+source 'git@github.com:salemove/ios-cocoapods-repo.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+
+# ignore all warnings from all pods 
+inhibit_all_warnings!
+
+platform :ios, :deployment_target => '10.0'
+
+def sdk_pods
+    pod 'SalemoveSDK'
+end
+
+target 'SaleMove' do
+    sdk_pods
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.3'
+            config.build_settings['ENABLE_BITCODE'] = 'NO'
+        end
+    end
+end
+
