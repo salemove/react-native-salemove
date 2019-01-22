@@ -46,17 +46,17 @@ class MediaViewController: UIViewController {
             remoteVideoStream = stream
             let view = remoteVideoStream!.getStreamView()
             remoteMediaStack.insertArrangedSubview(view, at: 0)
-            remoteVideoStream!.play()
+            remoteVideoStream!.playVideo()
         } else {
             localVideoStream = stream
             let view = localVideoStream!.getStreamView()
             localMediaStack.insertArrangedSubview(view, at: 0)
-            localVideoStream!.play()
+            localVideoStream!.playVideo()
         }
     }
     
     func handleAudioStream(stream: AudioStreamable) {
-        stream.play()
+        stream.playAudio()
     }
     
     @objc func handleRemoteTap() {
