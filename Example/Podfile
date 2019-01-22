@@ -1,0 +1,41 @@
+plugin 'cocoapods-fix-react-native'
+
+source 'https://github.com/CocoaPods/Specs.git'
+project 'Example.xcodeproj'
+platform :ios, '10.0'
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+use_frameworks!
+
+def react_pods
+    pod 'React', :path => 'node_modules/react-native', :subspecs => [
+    'Core',
+    'CxxBridge',
+    'DevSupport',
+    'RCTText',
+    'RCTNetwork',
+    'RCTWebSocket',
+    'RCTAnimation'
+    # Add any other subspecs you want to use in your project
+    ]
+
+    pod 'yoga', :path => 'node_modules/react-native/ReactCommon/yoga'
+
+    # Third party deps podspec link
+    pod 'DoubleConversion', :podspec => 'node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+    pod 'glog', :podspec => 'node_modules/react-native/third-party-podspecs/glog.podspec'
+    pod 'Folly', :podspec => 'node_modules/react-native/third-party-podspecs/Folly.podspec'
+end
+
+def dependency_pods
+    pod 'SalemoveSDK', :git => 'https://github.com/salemove/ios-bundle'
+    pod 'react-native-salemove', :path => '../'
+end
+
+target 'Example' do
+    dependency_pods
+    react_pods
+end
+
