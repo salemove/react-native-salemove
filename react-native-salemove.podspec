@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'react-native-salemove' => ['ios/**/*.{storyboard,xib}']
   } 
-  s.swift_version = '3.3'
+  s.swift_version = '4.2'
   s.ios.deployment_target = '10.0'
 
   s.dependency 'React'
