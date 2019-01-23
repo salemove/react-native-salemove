@@ -6,7 +6,7 @@
 
 1. Run `npm install react-native-salemove --save` in your project directory
 2. Open your `ios` folder and make sure the `cocoapods` are installed by running `pod --version`
-3. Open `Podfile` and add the following `pod 'react-native-salemove', :path => '../node_modules/react-native-salemove'`
+3. Open `Podfile` and add the following `pod 'react-native-salemove', :path => '../node_modules/react-native-salemove'` and `pod 'SalemoveSDK', :git => 'https://github.com/salemove/ios-bundle'`
 4. Run `pod install`
 
 ## Demo
