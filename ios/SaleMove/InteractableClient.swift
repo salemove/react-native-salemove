@@ -2,7 +2,7 @@ import Foundation
 import SalemoveSDK
 
 @objc public class InteractableClient: NSObject {
-    public weak var rootController: UIViewController?
+    @objc public weak var rootController: UIViewController?
 }
 
 extension InteractableClient: Interactable {
