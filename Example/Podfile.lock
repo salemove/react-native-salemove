@@ -1,0 +1,160 @@
+PODS:
+  - Alamofire (4.8.1)
+  - boost-for-react-native (1.63.0)
+  - DoubleConversion (1.1.5)
+  - Folly (2016.09.26.00):
+    - boost-for-react-native
+    - DoubleConversion
+    - glog
+  - glog (0.3.4)
+  - ios-socket-client (9.0.2)
+  - Locksmith (4.0.0)
+  - Macaw (0.9.3):
+    - SWXMLHash
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - ObjectMapper (3.4.2)
+  - PodAsset (1.0.0)
+  - React (0.55.4):
+    - React/Core (= 0.55.4)
+  - react-native-salemove (0.3.1):
+    - PodAsset
+    - React
+    - SalemoveSDK
+  - React/Core (0.55.4):
+    - yoga (= 0.55.4.React)
+  - React/CxxBridge (0.55.4):
+    - Folly (= 2016.09.26.00)
+    - React/Core
+    - React/cxxreact
+  - React/cxxreact (0.55.4):
+    - boost-for-react-native (= 1.63.0)
+    - Folly (= 2016.09.26.00)
+    - React/jschelpers
+    - React/jsinspector
+  - React/DevSupport (0.55.4):
+    - React/Core
+    - React/RCTWebSocket
+  - React/fishhook (0.55.4)
+  - React/jschelpers (0.55.4):
+    - Folly (= 2016.09.26.00)
+    - React/PrivateDatabase
+  - React/jsinspector (0.55.4)
+  - React/PrivateDatabase (0.55.4)
+  - React/RCTAnimation (0.55.4):
+    - React/Core
+  - React/RCTBlob (0.55.4):
+    - React/Core
+  - React/RCTNetwork (0.55.4):
+    - React/Core
+  - React/RCTText (0.55.4):
+    - React/Core
+  - React/RCTWebSocket (0.55.4):
+    - React/Core
+    - React/fishhook
+    - React/RCTBlob
+  - ReactiveSwift (4.0.0):
+    - Result (~> 4.0)
+  - Result (4.1.0)
+  - SalemoveSDK (0.7.30):
+    - ios-socket-client (= 9.0.2)
+    - Locksmith (= 4.0.0)
+    - Macaw (= 0.9.3)
+    - Moya (= 12.0.1)
+    - ObjectMapper (= 3.4.2)
+    - ReactiveSwift (= 4.0.0)
+    - SwiftPhoenixClient (= 0.9.3)
+    - SwiftyBeaver (= 1.6.1)
+    - WebRTC (= 63.11.20455)
+  - Starscream (3.0.6)
+  - SwiftPhoenixClient (0.9.3):
+    - Starscream (~> 3.0.6)
+  - SwiftyBeaver (1.6.1)
+  - SWXMLHash (4.7.6)
+  - WebRTC (63.11.20455)
+  - yoga (0.55.4.React)
+
+DEPENDENCIES:
+  - DoubleConversion (from `node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - Folly (from `node_modules/react-native/third-party-podspecs/Folly.podspec`)
+  - glog (from `node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - react-native-salemove (from `../`)
+  - React/Core (from `node_modules/react-native`)
+  - React/CxxBridge (from `node_modules/react-native`)
+  - React/DevSupport (from `node_modules/react-native`)
+  - React/RCTAnimation (from `node_modules/react-native`)
+  - React/RCTNetwork (from `node_modules/react-native`)
+  - React/RCTText (from `node_modules/react-native`)
+  - React/RCTWebSocket (from `node_modules/react-native`)
+  - SalemoveSDK (from `https://github.com/salemove/ios-bundle`)
+  - yoga (from `node_modules/react-native/ReactCommon/yoga`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - boost-for-react-native
+    - ios-socket-client
+    - Locksmith
+    - Macaw
+    - Moya
+    - ObjectMapper
+    - PodAsset
+    - ReactiveSwift
+    - Result
+    - Starscream
+    - SwiftPhoenixClient
+    - SwiftyBeaver
+    - SWXMLHash
+    - WebRTC
+
+EXTERNAL SOURCES:
+  DoubleConversion:
+    :podspec: node_modules/react-native/third-party-podspecs/DoubleConversion.podspec
+  Folly:
+    :podspec: node_modules/react-native/third-party-podspecs/Folly.podspec
+  glog:
+    :podspec: node_modules/react-native/third-party-podspecs/glog.podspec
+  React:
+    :path: node_modules/react-native
+  react-native-salemove:
+    :path: "../"
+  SalemoveSDK:
+    :git: https://github.com/salemove/ios-bundle
+  yoga:
+    :path: node_modules/react-native/ReactCommon/yoga
+
+CHECKOUT OPTIONS:
+  SalemoveSDK:
+    :commit: c21fa403b0f226559a2e46e7d1dbefbed6b0e748
+    :git: https://github.com/salemove/ios-bundle
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
+  Folly: 211775e49d8da0ca658aebc8eab89d642935755c
+  glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
+  ios-socket-client: 8acc396db85c694265ccfbd14b718f217f2d9754
+  Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
+  Macaw: e370d81f465ea1daa8a72d2afa218000bcd24f0a
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  PodAsset: c2c2b20013c1edf698fea2bacba6e75a638537a2
+  React: aa2040dbb6f317b95314968021bd2888816e03d5
+  react-native-salemove: 47c954072eec86ada388ec3bd683c10d69caefc7
+  ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SalemoveSDK: 20304ae75c5cef2108ee31ecd17331cf5e451813
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  SwiftPhoenixClient: 0bcdfff24412f79e40465cdfd903b262d3a4953f
+  SwiftyBeaver: ccfcdf85a04d429f1633f668650b0ce8020bda3a
+  SWXMLHash: f6e0933ce74f2626669dc544851bc9fc1941670d
+  WebRTC: f2a6203584745fe53532633397557876b5d71640
+  yoga: a23273df0088bf7f2bb7e5d7b00044ea57a2a54a
+
+PODFILE CHECKSUM: 78bea820e86a144bb2e82412246e466b53757300
+
+COCOAPODS: 1.5.3

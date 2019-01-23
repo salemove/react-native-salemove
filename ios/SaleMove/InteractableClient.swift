@@ -5,7 +5,19 @@ import SalemoveSDK
     public weak var rootController: UIViewController?
 }
 
-extension InteractableClient: Interactable {    
+extension InteractableClient: Interactable {
+    public var onScreenSharingOffer: ScreenshareOfferBlock {
+        return { answer in
+            answer(true)
+        }
+    }
+
+    public var onScreenStreamAdded: ScreenStreamAddedBlock {
+        return { stream in
+            // TODO handle the stream
+        }
+    }
+
     public var onMediaUpgradeOffer: MediaUgradeOfferBlock {
         return { _, answer in
             answer(true)
