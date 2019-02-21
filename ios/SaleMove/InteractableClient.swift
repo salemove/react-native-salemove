@@ -3,6 +3,7 @@ import SalemoveSDK
 
 @objc public class InteractableClient: NSObject {
     @objc public weak var rootController: UIViewController?
+    @objc public var localScreen: LocalScreen?
 }
 
 extension InteractableClient: Interactable {
@@ -12,9 +13,9 @@ extension InteractableClient: Interactable {
         }
     }
 
-    public var onScreenStreamAdded: ScreenStreamAddedBlock {
-        return { stream in
-            // TODO handle the stream
+    public var onLocalScreenAdded: LocalScreenAddedBlock {
+        return { [unowned self] screen in
+            self.localScreen = screen
         }
     }
 
@@ -77,4 +78,11 @@ extension InteractableClient: Interactable {
     
     public func handleOperators(operators: [Operator]) {}
     public func fail(with error: SalemoveError) {}
+}
+
+extension InteractableClient {
+    public func stopScreensharing() {
+        localScreen?.stopSharing()
+        localScreen = nil
+    }
 }
