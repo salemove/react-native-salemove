@@ -69,10 +69,10 @@ extension InteractableClient: Interactable {
         let payload: [AnyHashable: Any] = [
             "id": message.id,
             "content": message.content,
-            "sender": "operator"
+            "sender": String(describing: message.sender)
         ]
-        
-        InteractableEmmiter.emitEvent(withName: "operator_message", andPayload: payload)
+
+        InteractableEmmiter.emitEvent(withName: "message_received", andPayload: payload)
     }
     
     public func handleOperators(operators: [Operator]) {}
