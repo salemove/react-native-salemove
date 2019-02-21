@@ -6,7 +6,7 @@ RCT_EXPORT_MODULE(InteractableEmmiter);
 
 - (NSArray<NSString *> *)supportedEvents {
     return @[
-             @"operator_message",
+             @"message_received",
              @"engagement_start",
              @"engagement_end",
              @"audio_stream_add",
