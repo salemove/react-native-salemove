@@ -1,31 +1,31 @@
 import Foundation
 import SalemoveSDK
 
-@objc public class InteractableClient: NSObject {
-    @objc public weak var rootController: UIViewController?
-    @objc public var localScreen: LocalScreen?
+@objc open class InteractableClient: NSObject {
+    @objc open weak var rootController: UIViewController?
+    @objc open var localScreen: LocalScreen?
 }
 
 extension InteractableClient: Interactable {
-    public var onScreenSharingOffer: ScreenshareOfferBlock {
+    open var onScreenSharingOffer: ScreenshareOfferBlock {
         return { answer in
             answer(true)
         }
     }
 
-    public var onLocalScreenAdded: LocalScreenAddedBlock {
+    open var onLocalScreenAdded: LocalScreenAddedBlock {
         return { [unowned self] screen in
             self.localScreen = screen
         }
     }
 
-    public var onMediaUpgradeOffer: MediaUgradeOfferBlock {
+    open var onMediaUpgradeOffer: MediaUgradeOfferBlock {
         return { _, answer in
             answer(true)
         }
     }
     
-    public var onAudioStreamAdded: AudioStreamAddedBlock {
+    open var onAudioStreamAdded: AudioStreamAddedBlock {
         return { [unowned self] stream in
             if let presented = self.rootController?.presentedViewController as? MediaViewController {
                 presented.handleAudioStream(stream: stream)
@@ -39,7 +39,7 @@ extension InteractableClient: Interactable {
         }
     }
     
-    public var onVideoStreamAdded: VideoStreamAddedBlock {
+    open var onVideoStreamAdded: VideoStreamAddedBlock {
         return { [unowned self] stream in
             if let presented = self.rootController?.presentedViewController as? MediaViewController {
                 presented.handleVideoStream(stream: stream)
@@ -53,20 +53,20 @@ extension InteractableClient: Interactable {
         }
     }
     
-    public var onMessagesUpdated: MessagesUpdateBlock {
+    open var onMessagesUpdated: MessagesUpdateBlock {
         return { [unowned self] messages in
             // TODO: Handle the messages
         }
     }
     
-    public func start() {
+    open func start() {
         InteractableEmmiter.emitEvent(withName: "engagement_start", andPayload: nil)
     }
-    public func end() {
+    open func end() {
         InteractableEmmiter.emitEvent(withName: "engagement_end", andPayload: nil)
     }
     
-    public func receive(message: Message) {
+    open func receive(message: Message) {
         let payload: [AnyHashable: Any] = [
             "id": message.id,
             "content": message.content,
@@ -76,12 +76,12 @@ extension InteractableClient: Interactable {
         InteractableEmmiter.emitEvent(withName: "message_received", andPayload: payload)
     }
     
-    public func handleOperators(operators: [Operator]) {}
-    public func fail(with error: SalemoveError) {}
+    open func handleOperators(operators: [Operator]) {}
+    open func fail(with error: SalemoveError) {}
 }
 
 extension InteractableClient {
-    public func stopScreensharing() {
+    open func stopScreensharing() {
         localScreen?.stopSharing()
         localScreen = nil
     }
