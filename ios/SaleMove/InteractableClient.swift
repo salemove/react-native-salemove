@@ -64,6 +64,7 @@ extension InteractableClient: Interactable {
     }
     open func end() {
         InteractableEmmiter.emitEvent(withName: "engagement_end", andPayload: nil)
+        stopScreensharing()
     }
     
     open func receive(message: Message) {
