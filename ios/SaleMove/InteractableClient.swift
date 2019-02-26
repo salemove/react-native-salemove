@@ -13,6 +13,13 @@ extension InteractableClient: Interactable {
         }
     }
 
+    open var onEngagementRequest: RequestOfferBlock {
+        return { [unowned self] answer in
+            let context = VisitorContext(type: .page, url: "https://www.libertymutual.com")
+            answer(context, true)
+        }
+    }
+
     open var onLocalScreenAdded: LocalScreenAddedBlock {
         return { [unowned self] screen in
             self.localScreen = screen

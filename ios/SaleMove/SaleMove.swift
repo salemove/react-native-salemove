@@ -68,7 +68,9 @@ class SaleMove: NSObject {
     }
     @objc(requestEngagement:withResolve:withReject:)
     func requestEngagement(queueID: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
-        Salemove.sharedInstance.queueForEngagement(queueID: queueID) { queueTicket, error in
+        let context = VisitorContext(type: .page, url: "https://www.libertymutual.com")
+
+        Salemove.sharedInstance.queueForEngagement(queueID: queueID, visitorContext: context) { queueTicket, error in
             guard let incomingTicket = queueTicket else {
                 reject("", error?.reason, error?.error)
                 return
