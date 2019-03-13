@@ -20,7 +20,7 @@ PODS:
   - PodAsset (1.0.0)
   - React (0.55.4):
     - React/Core (= 0.55.4)
-  - react-native-salemove (0.3.5):
+  - react-native-salemove (0.3.7):
     - PodAsset
     - React
     - SalemoveSDK
@@ -59,7 +59,7 @@ PODS:
   - ReactiveSwift (4.0.0):
     - Result (~> 4.0)
   - Result (4.1.0)
-  - SalemoveSDK (0.9.0):
+  - SalemoveSDK (0.10.0):
     - ios-socket-client (= 9.0.2)
     - Locksmith (= 4.0.0)
     - Macaw (= 0.9.3)
@@ -73,7 +73,7 @@ PODS:
   - SwiftPhoenixClient (0.9.3):
     - Starscream (~> 3.0.6)
   - SwiftyBeaver (1.6.1)
-  - SWXMLHash (4.7.6)
+  - SWXMLHash (4.8.0)
   - WebRTC (63.11.20455)
   - yoga (0.55.4.React)
 
@@ -128,7 +128,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SalemoveSDK:
-    :commit: 5a280b87c3d3f203ffd4ee2fd5ba838dae4bf4cc
+    :commit: 90e676039dd1eb7651c414f521834ebeab98360d
     :git: https://github.com/salemove/ios-bundle
 
 SPEC CHECKSUMS:
@@ -147,11 +147,11 @@ SPEC CHECKSUMS:
   react-native-salemove: 47c954072eec86ada388ec3bd683c10d69caefc7
   ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SalemoveSDK: 3c18b4fb14352a88ff4da0a5405554eed51d4292
+  SalemoveSDK: 0507a0b25a7992172e3a1430fe60fbdeaea52ad5
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftPhoenixClient: 0bcdfff24412f79e40465cdfd903b262d3a4953f
   SwiftyBeaver: ccfcdf85a04d429f1633f668650b0ce8020bda3a
-  SWXMLHash: f6e0933ce74f2626669dc544851bc9fc1941670d
+  SWXMLHash: 6d0ab74fef35f99156945c8bfe86dd7ead0822aa
   WebRTC: f2a6203584745fe53532633397557876b5d71640
   yoga: a23273df0088bf7f2bb7e5d7b00044ea57a2a54a
 
