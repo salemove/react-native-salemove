@@ -15,14 +15,26 @@ extension InteractableClient: Interactable {
 
     open var onEngagementRequest: RequestOfferBlock {
         return { [unowned self] answer in
-            let context = VisitorContext(type: .page, url: "https://www.libertymutual.com")
-            answer(context, true)
+            let context = VisitorContext(type: .page, url: "https://www.glia.com/")
+            let completion: SuccessBlock = { _, _ in }
+
+            answer(context, true, completion)
         }
     }
 
     open var onLocalScreenAdded: LocalScreenAddedBlock {
         return { [unowned self] screen in
             self.localScreen = screen
+        }
+    }
+
+    open var onOperatorTypingStatusUpdate: OperatorTypingStatusUpdate {
+        return { [unowned self] status in
+            if status.isTyping {
+                InteractableEmmiter.emitEvent(withName: "operator_preview_typing", andPayload: nil)
+            } else {
+                InteractableEmmiter.emitEvent(withName: "operator_preview_deleted", andPayload: nil)
+            }
         }
     }
 
@@ -85,7 +97,7 @@ extension InteractableClient: Interactable {
     }
     
     open func handleOperators(operators: [Operator]) {}
-    open func fail(with error: SalemoveError) {}
+    open func fail(error: SalemoveError) {}
 }
 
 extension InteractableClient {
