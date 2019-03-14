@@ -1,6 +1,6 @@
 {
   "name": "react-native-salemove",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A React Native wrapper for the SaleMove client library",
   "main": "index.js",
   "scripts": {
