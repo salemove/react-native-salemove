@@ -204,7 +204,7 @@
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftPhoenixClient/SwiftPhoenixClient.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
-				"${PODS_ROOT}/WebRTC/WebRTC.framework",
+				"${PODS_ROOT}/glia-webrtc/output/bitcode/WebRTC.framework",
 				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
 				"${BUILT_PRODUCTS_DIR}/ios-socket-client/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/react-native-salemove/react_native_salemove.framework",

@@ -1,11 +1,12 @@
 PODS:
-  - Alamofire (4.8.1)
+  - Alamofire (4.8.2)
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.5)
   - Folly (2016.09.26.00):
     - boost-for-react-native
     - DoubleConversion
     - glog
+  - glia-webrtc/bitcode (0.0.3)
   - glog (0.3.4)
   - ios-socket-client (9.0.2)
   - Locksmith (4.0.0)
@@ -20,7 +21,7 @@ PODS:
   - PodAsset (1.0.0)
   - React (0.55.4):
     - React/Core (= 0.55.4)
-  - react-native-salemove (0.3.7):
+  - react-native-salemove (0.4.1):
     - PodAsset
     - React
     - SalemoveSDK
@@ -59,7 +60,8 @@ PODS:
   - ReactiveSwift (4.0.0):
     - Result (~> 4.0)
   - Result (4.1.0)
-  - SalemoveSDK (0.10.0):
+  - SalemoveSDK (0.14.0):
+    - glia-webrtc/bitcode (= 0.0.3)
     - ios-socket-client (= 9.0.2)
     - Locksmith (= 4.0.0)
     - Macaw (= 0.9.3)
@@ -67,14 +69,12 @@ PODS:
     - ObjectMapper (= 3.4.2)
     - ReactiveSwift (= 4.0.0)
     - SwiftPhoenixClient (= 0.9.3)
-    - SwiftyBeaver (= 1.6.1)
-    - WebRTC (= 63.11.20455)
+    - SwiftyBeaver (= 1.7.0)
   - Starscream (3.0.6)
   - SwiftPhoenixClient (0.9.3):
     - Starscream (~> 3.0.6)
-  - SwiftyBeaver (1.6.1)
-  - SWXMLHash (4.8.0)
-  - WebRTC (63.11.20455)
+  - SwiftyBeaver (1.7.0)
+  - SWXMLHash (4.9.0)
   - yoga (0.55.4.React)
 
 DEPENDENCIES:
@@ -96,6 +96,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - boost-for-react-native
+    - glia-webrtc
     - ios-socket-client
     - Locksmith
     - Macaw
@@ -108,7 +109,6 @@ SPEC REPOS:
     - SwiftPhoenixClient
     - SwiftyBeaver
     - SWXMLHash
-    - WebRTC
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -128,14 +128,15 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SalemoveSDK:
-    :commit: 90e676039dd1eb7651c414f521834ebeab98360d
+    :commit: b285b49ff293c2bf54f1c9618446f12ed8fe9b19
     :git: https://github.com/salemove/ios-bundle
 
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
   Folly: 211775e49d8da0ca658aebc8eab89d642935755c
+  glia-webrtc: a5c7e59ae752281d19734b4f918db9da39e8009d
   glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
   ios-socket-client: 8acc396db85c694265ccfbd14b718f217f2d9754
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
@@ -147,12 +148,11 @@ SPEC CHECKSUMS:
   react-native-salemove: 47c954072eec86ada388ec3bd683c10d69caefc7
   ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SalemoveSDK: 0507a0b25a7992172e3a1430fe60fbdeaea52ad5
+  SalemoveSDK: 4d2f8cc4462ab0c9dfb2c19c686300cf5f80b943
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftPhoenixClient: 0bcdfff24412f79e40465cdfd903b262d3a4953f
-  SwiftyBeaver: ccfcdf85a04d429f1633f668650b0ce8020bda3a
-  SWXMLHash: 6d0ab74fef35f99156945c8bfe86dd7ead0822aa
-  WebRTC: f2a6203584745fe53532633397557876b5d71640
+  SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
+  SWXMLHash: 87b0006848a548b7f9485b40bc71721b3ae39add
   yoga: a23273df0088bf7f2bb7e5d7b00044ea57a2a54a
 
 PODFILE CHECKSUM: 78bea820e86a144bb2e82412246e466b53757300

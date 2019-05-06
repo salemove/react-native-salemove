@@ -3,10 +3,19 @@ import SalemoveSDK
 
 @objc open class InteractableClient: NSObject {
     @objc open weak var rootController: UIViewController?
-    @objc open var localScreen: LocalScreen?
+    @objc open var visitorScreenSharing: VisitorScreenSharingState?
 }
 
 extension InteractableClient: Interactable {
+    open var onVisitorScreenSharingStateChange: VisitorScreenSharingStateChange {
+        return { [unowned self] state, error in
+            guard error == nil else {
+                return
+            }
+            self.visitorScreenSharing = state
+        }
+    }
+
     open var onScreenSharingOffer: ScreenshareOfferBlock {
         return { answer in
             answer(true)
@@ -19,12 +28,6 @@ extension InteractableClient: Interactable {
             let completion: SuccessBlock = { _, _ in }
 
             answer(context, true, completion)
-        }
-    }
-
-    open var onLocalScreenAdded: LocalScreenAddedBlock {
-        return { [unowned self] screen in
-            self.localScreen = screen
         }
     }
 
@@ -45,29 +48,41 @@ extension InteractableClient: Interactable {
     }
     
     open var onAudioStreamAdded: AudioStreamAddedBlock {
-        return { [unowned self] stream in
-            if let presented = self.rootController?.presentedViewController as? MediaViewController {
-                presented.handleAudioStream(stream: stream)
-                
-            } else {
-                let controller = MediaViewController.initStoryboardInstance()
-                self.rootController?.present(controller, animated: true, completion: {
-                    controller.handleAudioStream(stream: stream)
-                })
+        return { [unowned self] stream, error in
+            guard let currentSream = stream, error == nil else {
+                return
+            }
+
+            DispatchQueue.main.async {
+                if let presented = self.rootController?.presentedViewController as? MediaViewController {
+                    presented.handleAudioStream(stream: currentSream)
+
+                } else {
+                    let controller = MediaViewController.initStoryboardInstance()
+                    self.rootController?.present(controller, animated: true, completion: {
+                        controller.handleAudioStream(stream: currentSream)
+                    })
+                }
             }
         }
     }
     
     open var onVideoStreamAdded: VideoStreamAddedBlock {
-        return { [unowned self] stream in
-            if let presented = self.rootController?.presentedViewController as? MediaViewController {
-                presented.handleVideoStream(stream: stream)
-                
-            } else {
-                let controller = MediaViewController.initStoryboardInstance()
-                self.rootController?.present(controller, animated: true, completion: {
-                    controller.handleVideoStream(stream: stream)
-                })
+        return { [unowned self] stream, error in
+            guard let currentSream = stream, error == nil else {
+                return
+            }
+
+            DispatchQueue.main.async {
+                if let presented = self.rootController?.presentedViewController as? MediaViewController {
+                    presented.handleVideoStream(stream: currentSream)
+
+                } else {
+                    let controller = MediaViewController.initStoryboardInstance()
+                    self.rootController?.present(controller, animated: true, completion: {
+                        controller.handleVideoStream(stream: currentSream)
+                    })
+                }
             }
         }
     }
@@ -102,7 +117,7 @@ extension InteractableClient: Interactable {
 
 extension InteractableClient {
     open func stopScreensharing() {
-        localScreen?.stopSharing()
-        localScreen = nil
+        visitorScreenSharing?.localScreen?.stopSharing()
+        visitorScreenSharing = nil
     }
 }
