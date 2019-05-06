@@ -79,6 +79,29 @@ class SaleMove: NSObject {
             resolve("")
         }
     }
+
+    @objc(updateInformation:email:phone:externalID:customAttrtibutes:withResolve:withReject:)
+    func updateInformation(name: String?,
+                           email: String?,
+                           phone: String?,
+                           externalID: String?,
+                           customAttributes:([String: String]),
+                           resolve: @escaping RCTPromiseResolveBlock,
+                           reject: @escaping RCTPromiseRejectBlock) {
+        Salemove.sharedInstance.updateInformation(name: name,
+                                                  email: email,
+                                                  phone: phone,
+                                                  externalID: externalID,
+                                                  customAttributes: customAttributes) { success, error in
+                                                    guard success else {
+                                                        reject("", error?.reason, error?.error)
+                                                        return
+                                                    }
+
+                                                    resolve("")
+
+        }
+    }
     
     @objc(endEngagement:withReject:)
     func endEngagement(resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
